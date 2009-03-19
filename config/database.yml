@@ -18,7 +18,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: movies.stevenwilkin.com_development
+  database: movies_development
   pool: 5
   username: root
   password:
