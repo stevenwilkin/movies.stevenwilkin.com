@@ -14,10 +14,13 @@ class ApplicationController < ActionController::Base
 
   # check auth credentials against hashed values and set a value in the session if correct
   def authenticate
-    @success = authenticate_or_request_with_http_digest('Admin') do |user|
-      'cb66e0c44e63c5c141c3b2ce99155575'  # MD5::hexdigest('steve:Admin:pass')
+    unless session[:admin]
+      @success = authenticate_or_request_with_http_digest('Admin') do |user|
+        'cb66e0c44e63c5c141c3b2ce99155575'  # MD5::hexdigest('USER:Admin:PASS')
+      end
+      session[:admin] = 1 if @success
     end
-    session[:admin] = 1 if @success
+    session[:admin]
   end
 
   # are we logged in?
