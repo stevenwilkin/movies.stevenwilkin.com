@@ -1,20 +1,18 @@
-<h1>Listing movies</h1>
+<h1>Movies</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-  </tr>
 
 <% @movies.each do |movie| %>
   <tr>
     <td><%=h movie.title %></td>
-    <td><%= link_to 'Show', movie %></td>
-    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-    <td><%= link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if admin?  %>
+      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+      <td><%= link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New movie', new_movie_path %>
+<% if admin?  %>
+  <%= link_to 'New movie', new_movie_path %>
+<% end %>
