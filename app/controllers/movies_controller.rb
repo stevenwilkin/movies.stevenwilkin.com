@@ -5,11 +5,10 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.all(:order => 'title ASC')
-
+    @movies = Movie.all_grouped_by_first_letter
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @movies }
+      format.xml  { render :xml => Movie.all(:order => 'title ASC') }
     end
   end
 
