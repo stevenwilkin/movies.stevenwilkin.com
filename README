@@ -1,3 +1,7 @@
 # movies.stevenwilkin.com
 
 Some time ago a friend asked me for a list of my DVDs, so I created a spreadsheet with the intentions of developing a web-app. Years later this is the result.
+
+## dependencies
+
+HAML for views
