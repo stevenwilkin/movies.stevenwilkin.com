@@ -1,5 +1,6 @@
 class Movie < ActiveRecord::Base
 
+  validates_presence_of :title
   validates_uniqueness_of :title
 
   # a hash of letters => arrays of movies beginning with that leter
