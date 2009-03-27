@@ -1,0 +1,15 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => 'en', :lang => 'en'}
+
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'} 
+    %title The DVD collection of Steven Wilkin
+    %meta{:name => 'description', :content => "A simple CMS developed in Rails used to manage Steven Wilkin's DVDs"}
+    = stylesheet_link_tag 'scaffold'
+
+  %body
+    #header
+      %p{:style => 'color: green'}
+        = flash[:notice]
+    #content
+      = yield
