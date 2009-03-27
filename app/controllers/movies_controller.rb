@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.all
+    @movies = Movie.all(:order => 'title ASC')
 
     respond_to do |format|
       format.html # index.html.erb

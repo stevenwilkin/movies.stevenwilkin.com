@@ -1,13 +1,11 @@
-%table
+%ul
 
   - @movies.each do |movie|
-    %tr
-      %td
-        =h movie.title
+    %li
+      =h movie.title
       - if admin?
-        %td
-          = link_to 'Edit', edit_movie_path(movie)
-          = link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Edit', edit_movie_path(movie)
+        = link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete
 
 - if admin?
   = link_to 'New movie', new_movie_path
