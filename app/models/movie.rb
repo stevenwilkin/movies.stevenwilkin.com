@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
 
+  validates_uniqueness_of :title
+
   # a hash of letters => arrays of movies beginning with that leter
   def self.all_grouped_by_first_letter
     @movies = {}
