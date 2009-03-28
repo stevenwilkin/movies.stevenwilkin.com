@@ -8,4 +8,8 @@
     %br/
     = f.text_field :title
   %p
+    = f.label :source
+    %br/
+    = f.select :source, Movie::SOURCES.map {|m| [m, Movie::SOURCES.index(m)]}
+  %p
     = f.submit 'Update'
