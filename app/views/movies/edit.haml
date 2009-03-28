@@ -1,0 +1,11 @@
+%h1 Edit moview
+
+- form_for(@movie) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.submit 'Update'
