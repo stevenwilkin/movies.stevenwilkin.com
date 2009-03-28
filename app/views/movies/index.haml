@@ -6,6 +6,8 @@
         - @movies[key].each do |movie|
           %li
             &= movie.title
+            - unless movie.source == 0
+              == [#{Movie::SOURCES[movie.source]}]
             - if admin?
               = link_to 'Edit', edit_movie_path(movie)
               = link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete
