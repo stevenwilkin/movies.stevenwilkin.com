@@ -1,17 +1,52 @@
-#body {
+body {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
 
 #wrapper {
+  margin: 20px 50px;
 }
 
 #header {
+  float: left;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+#header h1 {
+  float: left;
+}
+
+#header p {
+  float: right;
 }
 
 #admin {
+  float: right;
+  clear: right;
 }
 
 #nav {
+  float: left;
+  clear: both;
+  width: 55px;
 }
 
 #content {
+  float: left;
+}
+
+#content ul {
+  float: left;
+}
+
+#content h2 {
+  font-weight: normal;
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+#content ul li ul {
+  margin: 0 0 0 25px;
+  position: relative;
+  top: -15px;
 }
