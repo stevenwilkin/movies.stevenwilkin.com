@@ -35,7 +35,7 @@ body {
   float: left;
 }
 
-#content ul {
+#content ul#letter {
   float: left;
 }
 
