@@ -8,10 +8,15 @@
     = stylesheet_link_tag 'reset', 'movies'
 
   %body
+
     #wrapper
+
       #header
         %h1
           = link_to 'Movies', root_path
+        %p
+          = link_to 'Steven Wilkin', 'http://stevenwilkin.com'
+          = link_to 'Contact', 'http://stevenwilkin.com/contact'
         #admin
           - if admin?
             = link_to 'New movie', new_movie_path
