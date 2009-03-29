@@ -5,6 +5,3 @@
       %ul
         - @movies[key].each do |movie|
           = render :partial => 'movie_li', :locals => {:movie => movie}
-
-- if admin?
-  = link_to 'New movie', new_movie_path

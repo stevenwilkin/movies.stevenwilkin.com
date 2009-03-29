@@ -15,3 +15,7 @@
         = flash[:notice]
     #content
       = yield
+
+      - if admin?
+        = link_to 'New movie', new_movie_path
+        = link_to 'Logout', logout_path
