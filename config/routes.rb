@@ -39,6 +39,9 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'admin', :action => 'login'
   map.logout '/logout', :controller => 'admin', :action => 'logout'
 
+  # index movies by inital character of title
+  map.character '/:character', :controller => 'movies', :action => 'character', :character => /\w{1}/
+
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

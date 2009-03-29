@@ -20,4 +20,9 @@ class Movie < ActiveRecord::Base
     @movies
   end
 
+  # all movies staring with the specified letter
+  def self.find_by_first_letter(letter)
+    self.all(:order => 'title ASC', :conditions => ['title LIKE ?', "#{letter}%"])
+  end
+
 end

@@ -12,6 +12,12 @@ class MoviesController < ApplicationController
     end
   end
 
+  # all the movies beginnning with the specified character
+  def character
+    @character = params[:character]
+    @movies = Movie.find_by_first_letter(@character)
+  end
+
   # GET /movies/1
   # GET /movies/1.xml
   def show
