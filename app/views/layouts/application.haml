@@ -5,23 +5,24 @@
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'} 
     %title The DVD collection of Steven Wilkin
     %meta{:name => 'description', :content => "A simple CMS developed in Rails used to manage Steven Wilkin's DVDs"}
-    = stylesheet_link_tag 'scaffold'
+    = stylesheet_link_tag 'reset', 'movies'
 
   %body
-    #header
-      %h1
-        = link_to 'Movies', root_path
-      %p{:style => 'color: green'}
-        = flash[:notice]
-
-    #nav
-      %ul
-        - @nav.each do |n|
-          %li= link_to "#{n.letter} (#{n.count})", character_path(:character => n.letter)
-        
-    #content
-      = yield
-
-      - if admin?
-        = link_to 'New movie', new_movie_path
-        = link_to 'Logout', logout_path
+    #wrapper
+      #header
+        %h1
+          = link_to 'Movies', root_path
+        #admin
+          - if admin?
+            = link_to 'New movie', new_movie_path
+            = link_to 'Logout', logout_path
+          #notice
+            = flash[:notice]
+  
+      #nav
+        %ul
+          - @nav.each do |n|
+            %li= link_to "#{n.letter} (#{n.count})", character_path(:character => n.letter)
+          
+      #content
+        = yield
