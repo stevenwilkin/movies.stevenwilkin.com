@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
   def character
     @character = params[:character]
     @movies = Movie.find_by_first_letter(@character)
+    @title_for_layout = "beginning with '#{@character.downcase}'"
   end
 
   # GET /movies/1
