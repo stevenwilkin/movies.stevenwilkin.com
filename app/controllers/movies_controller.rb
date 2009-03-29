@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
 
-  before_filter :authenticate, :except => :index
+  before_filter :authenticate, :except => [:index, :character]
 
   # GET /movies
   # GET /movies.xml
