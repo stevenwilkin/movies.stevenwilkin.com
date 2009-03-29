@@ -13,6 +13,12 @@
         = link_to 'Movies', root_path
       %p{:style => 'color: green'}
         = flash[:notice]
+
+    #nav
+      %ul
+        - @nav.each do |n|
+          %li= link_to "#{n.letter} (#{n.count})", character_path(:character => n.letter)
+        
     #content
       = yield
 

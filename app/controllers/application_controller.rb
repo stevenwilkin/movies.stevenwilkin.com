@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin? # let the view know the login status
 
+  before_filter :nav
+
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
@@ -26,6 +28,11 @@ class ApplicationController < ActionController::Base
   # are we logged in?
   def admin?
     session[:admin]
+  end
+
+  # movie navigation for the layout
+  def nav
+    @nav = Movie.first_letters_and_count
   end
 
 end

@@ -25,4 +25,18 @@ class Movie < ActiveRecord::Base
     self.all(:order => 'title ASC', :conditions => ['title LIKE ?', "#{letter}%"])
   end
 
+  # the first letters of the movie titles with the number of movie titles sharing that first letter
+  def self.first_letters_and_count
+    sql = <<-SQL
+      SELECT
+        LCASE(SUBSTR(title, 1, 1)) AS letter,
+        COUNT(title) AS count
+      FROM
+        movies
+      GROUP BY
+        letter ASC;
+    SQL
+    self.find_by_sql(sql);
+  end
+
 end
