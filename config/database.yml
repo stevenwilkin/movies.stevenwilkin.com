@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: movies.stevenwilkin.com_production
+  database: movies_production
   pool: 5
-  username: root
-  password: 
-  socket: /opt/local/var/run/mysql5/mysqld.sock
+  username: movies
+  password: x8Enemta7M3s 
+  socket: /var/run/mysqld/mysqld.sock
