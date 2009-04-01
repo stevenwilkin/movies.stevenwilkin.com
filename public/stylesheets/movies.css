@@ -46,12 +46,30 @@ a {
 #header p a:hover {
   color: #000000;
 }
-
-#admin {
-  float: right;
-  clear: right;
-}
 /* }}} header */
+
+
+/* {{{ admin */
+#admin {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
+#admin a {
+  color: #0078D0;
+  padding: 0 0 0 5px;
+}
+
+#admin a:hover {
+  color: #A2A2A2;
+}
+
+#admin #notice {
+  float:left;
+  color: #FFCC00;
+}
+/* }}} admin */
 
 
 /* {{{ nav */
@@ -75,6 +93,7 @@ a {
   float: left;
 }
 
+
 /* {{{ movies beginning with a specific character */
 #content ul#letter {
   float: left;
@@ -94,6 +113,18 @@ a {
 
 /* main movie listings */
 #content ul li {
+  color: #A2A2A2;
+}
+
+#content ul li a {
+  float: right;
+  position: relative;
+  top: -15px;
+  margin: 0 0 0 5px;
+  color: #0078D0;
+}
+
+#content ul li a:hover {
   color: #A2A2A2;
 }
 

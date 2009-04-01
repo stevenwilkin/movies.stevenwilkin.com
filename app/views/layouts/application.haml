@@ -20,12 +20,13 @@
         %p
           = link_to 'Steven Wilkin', 'http://stevenwilkin.com'
           = link_to 'Contact', 'http://stevenwilkin.com/contact'
-        #admin
-          - if admin?
-            = link_to 'New movie', new_movie_path
-            = link_to 'Logout', logout_path
-          #notice
-            = flash[:notice]
+
+      #admin
+        #notice
+          = flash[:notice]
+        - if admin?
+          = link_to 'New movie', new_movie_path
+          = link_to 'Logout', logout_path
   
       #nav
         %ul
