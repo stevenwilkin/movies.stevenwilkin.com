@@ -35,3 +35,10 @@
           
       #content
         = yield
+
+    %script{:type => 'text/javascript', :src => 'http://www.google-analytics.com/ga.js'}
+    :javascript
+      try {
+      var pageTracker = _gat._getTracker("UA-2764682-8");
+      pageTracker._trackPageview();
+      } catch(err) {}
