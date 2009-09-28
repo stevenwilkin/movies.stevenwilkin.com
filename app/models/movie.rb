@@ -2,7 +2,7 @@ class Movie < ActiveRecord::Base
 
   # the source marerial of the DVD, assuming pirated ;)
   # http://www.vcdq.com/index.php?page=faq
-  SOURCES = %w(DVD-Rip R5 R5-Line DVD-Scr VHS-Scr R3)
+  SOURCES = %w(DVD-Rip R5 R5-Line DVD-Scr VHS-Scr R3 Telecine Telesync Cam)
 
   # title must be present and unique
   validates_presence_of :title
