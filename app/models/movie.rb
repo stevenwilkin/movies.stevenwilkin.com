@@ -14,7 +14,7 @@ class Movie < ActiveRecord::Base
   # a hash of letters => arrays of movies beginning with that leter
   def self.all_grouped_by_first_letter
     @movies = {}
-    self.all(:order => 'title ASC').each do |movie|
+    self.all(:order => 'LOWER(title) ASC').each do |movie|
       (@movies[movie.title.first.downcase] ||= []).push(movie)
     end
     @movies
@@ -22,18 +22,20 @@ class Movie < ActiveRecord::Base
 
   # all movies staring with the specified letter
   def self.find_by_first_letter(letter)
-    self.all(:order => 'title ASC', :conditions => ['title LIKE ?', "#{letter}%"])
+    self.all(:order => 'title ASC', :conditions => ['title ILIKE ?', "#{letter}%"])
   end
 
   # the first letters of the movie titles with the number of movie titles sharing that first letter
   def self.first_letters_and_count
     sql = <<-SQL
       SELECT
-        LCASE(SUBSTR(title, 1, 1)) AS letter,
+        LOWER(SUBSTR(title, 1, 1)) AS letter,
         COUNT(title) AS count
       FROM
         movies
       GROUP BY
+        letter
+      ORDER BY
         letter ASC;
     SQL
     self.find_by_sql(sql);
